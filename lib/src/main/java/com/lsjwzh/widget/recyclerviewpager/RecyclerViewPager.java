@@ -255,7 +255,7 @@ public class RecyclerViewPager extends RecyclerView {
                             if (mOnPageChangedListeners != null) {
                                 for (OnPageChangedListener onPageChangedListener : mOnPageChangedListeners) {
                                     if (onPageChangedListener != null) {
-                                        onPageChangedListener.OnPageChanged(mPositionBeforeScroll, mSmoothScrollTargetPosition);
+                                        onPageChangedListener.OnPageChanged(mPositionBeforeScroll, getCurrentPosition());
                                     }
                                 }
                             }
