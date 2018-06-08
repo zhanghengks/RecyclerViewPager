@@ -252,13 +252,13 @@ public class RecyclerViewPager extends RecyclerView {
                         @Override
                         protected void onStop() {
                             super.onStop();
-//                            if (mOnPageChangedListeners != null) {
-//                                for (OnPageChangedListener onPageChangedListener : mOnPageChangedListeners) {
-//                                    if (onPageChangedListener != null) {
-//                                        onPageChangedListener.OnPageChanged(mPositionBeforeScroll, getCurrentPosition());
-//                                    }
-//                                }
-//                            }
+                            if (mOnPageChangedListeners != null) {
+                                for (OnPageChangedListener onPageChangedListener : mOnPageChangedListeners) {
+                                    if (onPageChangedListener != null) {
+                                        onPageChangedListener.OnPageChanged(mPositionBeforeScroll, getCurrentPosition());
+                                    }
+                                }
+                            }
                             mHasCalledOnPageChanged = true;
                         }
                     };
