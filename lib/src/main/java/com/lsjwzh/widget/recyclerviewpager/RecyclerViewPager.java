@@ -326,7 +326,7 @@ public class RecyclerViewPager extends RecyclerView {
     }
 
 
-    private boolean isLeftToRightMode(){
+    private boolean isLeftToRightMode() {
         return TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR;
     }
 
@@ -538,15 +538,13 @@ public class RecyclerViewPager extends RecyclerView {
                         if (spanX > mCurView.getWidth() * mTriggerOffset && mCurView.getLeft() >= mMaxLeftWhenDragging) {
                             if (!reverseLayout) {
                                 targetPosition = leftToRight ? (targetPosition - 1) : (targetPosition + 1);
-                            }
-                            else {
+                            } else {
                                 targetPosition = leftToRight ? (targetPosition + 1) : (targetPosition - 1);
                             }
                         } else if (spanX < mCurView.getWidth() * -mTriggerOffset && mCurView.getLeft() <= mMinLeftWhenDragging) {
                             if (!reverseLayout) {
                                 targetPosition = leftToRight ? (targetPosition + 1) : (targetPosition - 1);
-                            }
-                            else {
+                            } else {
                                 targetPosition = leftToRight ? (targetPosition - 1) : (targetPosition + 1);
                             }
                         }
@@ -563,7 +561,8 @@ public class RecyclerViewPager extends RecyclerView {
                 }
                 smoothScrollToPosition(safeTargetPosition(targetPosition, getItemCount()));
                 mCurView = null;
-            } else if (mSmoothScrollTargetPosition != mPositionBeforeScroll) {
+//            } else if (mSmoothScrollTargetPosition != mPositionBeforeScroll) {
+            } else {
                 if (DEBUG) {
                     Log.d("@", "onPageChanged:" + mSmoothScrollTargetPosition);
                 }
