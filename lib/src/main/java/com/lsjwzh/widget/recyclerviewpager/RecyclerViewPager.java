@@ -252,13 +252,13 @@ public class RecyclerViewPager extends RecyclerView {
                         @Override
                         protected void onStop() {
                             super.onStop();
-                            if (mOnPageChangedListeners != null) {
-                                for (OnPageChangedListener onPageChangedListener : mOnPageChangedListeners) {
-                                    if (onPageChangedListener != null) {
-                                        onPageChangedListener.OnPageChanged(mPositionBeforeScroll, getCurrentPosition());
-                                    }
-                                }
-                            }
+//                            if (mOnPageChangedListeners != null) {
+//                                for (OnPageChangedListener onPageChangedListener : mOnPageChangedListeners) {
+//                                    if (onPageChangedListener != null) {
+//                                        onPageChangedListener.OnPageChanged(mPositionBeforeScroll, getCurrentPosition());
+//                                    }
+//                                }
+//                            }
                             mHasCalledOnPageChanged = true;
                         }
                     };
@@ -566,6 +566,13 @@ public class RecyclerViewPager extends RecyclerView {
             } else if (mSmoothScrollTargetPosition != mPositionBeforeScroll) {
                 if (DEBUG) {
                     Log.d("@", "onPageChanged:" + mSmoothScrollTargetPosition);
+                }
+                if (mOnPageChangedListeners != null) {
+                    for (OnPageChangedListener onPageChangedListener : mOnPageChangedListeners) {
+                        if (onPageChangedListener != null) {
+                            onPageChangedListener.OnPageChanged(mPositionBeforeScroll, mSmoothScrollTargetPosition);
+                        }
+                    }
                 }
                 mPositionBeforeScroll = mSmoothScrollTargetPosition;
             }
