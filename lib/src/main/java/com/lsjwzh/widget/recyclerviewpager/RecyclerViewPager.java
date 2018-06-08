@@ -562,6 +562,7 @@ public class RecyclerViewPager extends RecyclerView {
                 smoothScrollToPosition(safeTargetPosition(targetPosition, getItemCount()));
                 mCurView = null;
 //            } else if (mSmoothScrollTargetPosition != mPositionBeforeScroll) {
+                //修改快速滑动onPageChanged返回错误
             } else {
                 if (DEBUG) {
                     Log.d("@", "onPageChanged:" + mSmoothScrollTargetPosition);
